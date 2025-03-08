@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsei3543c7gw1"]
+
+[ext_resource type="Script" uid="uid://dkqc84q3oelga" path="res://objects/scenes/scene_one.gd" id="1_0hesq"]
+[ext_resource type="Texture2D" uid="uid://dxxcvmand5ul1" path="res://assets/backgrounds/temp_background.jpg" id="2_jqh1n"]
+[ext_resource type="PackedScene" uid="uid://cxbedttq5o5h3" path="res://objects/characters/storyteller.tscn" id="3_cg1lv"]
+[ext_resource type="PackedScene" uid="uid://m5mmuk1bilqo" path="res://objects/ui/dialog_ui.tscn" id="4_sv83g"]
+
+[node name="SceneOne" type="Node2D"]
+script = ExtResource("1_0hesq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jqh1n")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Storyteller" parent="CanvasLayer2/Control" instance=ExtResource("3_cg1lv")]
+unique_name_in_owner = true
+position = Vector2(-1, -335)
+
+[node name="DialogUI" parent="CanvasLayer2" instance=ExtResource("4_sv83g")]
+unique_name_in_owner = true
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
