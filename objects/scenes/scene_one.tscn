@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsei3543c7gw1"]
 
 [ext_resource type="Script" uid="uid://dkqc84q3oelga" path="res://objects/scenes/scene_one.gd" id="1_0hesq"]
-[ext_resource type="Texture2D" uid="uid://dxxcvmand5ul1" path="res://assets/backgrounds/temp_background.jpg" id="2_jqh1n"]
+[ext_resource type="Texture2D" uid="uid://duay7273321pw" path="res://assets/backgrounds/scene_one.png" id="2_0hesq"]
 [ext_resource type="PackedScene" uid="uid://cxbedttq5o5h3" path="res://objects/characters/storyteller.tscn" id="3_cg1lv"]
 [ext_resource type="PackedScene" uid="uid://m5mmuk1bilqo" path="res://objects/ui/dialog_ui.tscn" id="4_sv83g"]
 
@@ -19,7 +19,7 @@ offset_left = -1.0
 offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_jqh1n")
+texture = ExtResource("2_0hesq")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 

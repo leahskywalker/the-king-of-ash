@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://b67i411cdcj3s"]
+
+[ext_resource type="Texture2D" uid="uid://duay7273321pw" path="res://assets/backgrounds/scene_one.png" id="1_4dn8j"]
+[ext_resource type="Theme" uid="uid://ce1yq8505w8fg" path="res://objects/ui/ui_theme.tres" id="1_wa7j8"]
+[ext_resource type="Script" uid="uid://c31k863thhfpq" path="res://objects/ui/play.gd" id="3_wa7j8"]
+[ext_resource type="Script" uid="uid://bqv62bugxs8r6" path="res://objects/ui/quit.gd" id="4_kei3v"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wa7j8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_4dn8j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 131.0
+offset_top = 266.0
+offset_right = 541.0
+offset_bottom = 651.0
+theme = ExtResource("1_wa7j8")
+theme_override_constants/separation = 20
+
+[node name="Play" type="Button" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(410, 115)
+layout_mode = 2
+theme_override_font_sizes/font_size = 85
+text = "Play"
+script = ExtResource("3_wa7j8")
+
+[node name="Settings" type="Button" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(410, 115)
+layout_mode = 2
+theme_override_font_sizes/font_size = 85
+text = "Settings"
+
+[node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(410, 115)
+layout_mode = 2
+theme_override_font_sizes/font_size = 85
+text = "Quit"
+script = ExtResource("4_kei3v")
