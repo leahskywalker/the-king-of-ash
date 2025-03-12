@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://olk7ydm31hi5"
-path="res://.godot/imported/frame_2_delay-0.2s.png-fdc91fdb584701ce90152efc6b1518cd.ctex"
+uid="uid://dre773qmauxsk"
+path="res://.godot/imported/frame_0_delay-3.5s.png-f39c2df2145da8e3909f9962165e1f21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/talking/frame_2_delay-0.2s.png"
-dest_files=["res://.godot/imported/frame_2_delay-0.2s.png-fdc91fdb584701ce90152efc6b1518cd.ctex"]
+source_file="res://assets/sprites/storyteller/idle/frame_0_delay-3.5s.png"
+dest_files=["res://.godot/imported/frame_0_delay-3.5s.png-f39c2df2145da8e3909f9962165e1f21.ctex"]
 
 [params]
 

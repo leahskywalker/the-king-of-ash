@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://m5mmuk1bilqo"]
+[gd_scene load_steps=6 format=3 uid="uid://m5mmuk1bilqo"]
 
 [ext_resource type="Theme" uid="uid://ce1yq8505w8fg" path="res://objects/ui/ui_theme.tres" id="1_0b42j"]
 [ext_resource type="Script" uid="uid://g4ovu88mlsvi" path="res://objects/ui/dialog_ui.gd" id="2_x1rau"]
 [ext_resource type="FontFile" uid="uid://c4o73e5a0ljlr" path="res://assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf" id="3_bgcm5"]
+[ext_resource type="Script" uid="uid://b4a2gqdvpyv56" path="res://objects/ui/text_blip_sound.gd" id="3_qmooa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qmooa"]
 font = ExtResource("3_bgcm5")
-font_size = 25
+font_size = 40
 
 [node name="DialogUI" type="Control"]
 layout_mode = 3
@@ -18,6 +19,19 @@ grow_vertical = 2
 theme = ExtResource("1_0b42j")
 script = ExtResource("2_x1rau")
 
+[node name="SentencePauseTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.35
+one_shot = true
+
+[node name="TextBlipTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.09
+
+[node name="TextBlipSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_qmooa")
+
 [node name="DialogBox" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 1
@@ -25,9 +39,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
 offset_top = -200.0
-offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -35,15 +47,16 @@ grow_vertical = 0
 unique_name_in_owner = true
 layout_mode = 2
 text = "This is a line of dialog"
+scroll_active = false
 
 [node name="SpeakerBox" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 1.0
 offset_top = 830.0
-offset_right = 181.0
+offset_right = 230.0
 offset_bottom = 880.0
 
 [node name="Polygon2D" type="Polygon2D" parent="SpeakerBox"]
+scale = Vector2(1.28, 1)
 color = Color(0.137255, 0.372549, 1, 0.588235)
 polygon = PackedVector2Array(0, 0, 180, 0, 200, 50, 0, 50)
 
@@ -55,10 +68,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -13.0
-offset_right = 25.0
-offset_bottom = 14.0
+offset_left = -39.0
+offset_top = -21.5
+offset_right = 41.0
+offset_bottom = 21.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Name"

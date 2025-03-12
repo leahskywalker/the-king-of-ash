@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxbedttq5o5h3"]
+
+[ext_resource type="Script" uid="uid://b67a8ukwm705" path="res://objects/characters/character_sprite.gd" id="1_0sfkk"]
+[ext_resource type="SpriteFrames" uid="uid://ti4xohy72cl5" path="res://objects/characters/storyteller_sprites.tres" id="1_qvw7o"]
+
+[node name="CharacterSprite" type="Node2D"]
+script = ExtResource("1_0sfkk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_qvw7o")
+animation = &"talking"
+frame = 3
+frame_progress = 0.512018

@@ -26,5 +26,5 @@ Button/font_sizes/font_size = 20
 Button/fonts/font = ExtResource("1_naih8")
 Button/styles/normal = SubResource("StyleBoxTexture_jvym2")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_ygnyk")
-RichTextLabel/font_sizes/normal_font_size = 40
+RichTextLabel/font_sizes/normal_font_size = 55
 RichTextLabel/fonts/normal_font = ExtResource("1_naih8")
