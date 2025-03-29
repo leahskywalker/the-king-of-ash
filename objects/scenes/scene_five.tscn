@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpnws3uvndux0"]
+
+[ext_resource type="Script" uid="uid://wsgec2k78pnl" path="res://objects/scenes/scene_five.gd" id="1_nanc0"]
+[ext_resource type="AudioStream" uid="uid://l70ltxyw3mah" path="res://assets/sounds/temp_dink.wav" id="2_enha6"]
+[ext_resource type="Texture2D" uid="uid://duay7273321pw" path="res://assets/backgrounds/scene_one.png" id="3_ohmtp"]
+[ext_resource type="PackedScene" uid="uid://cxbedttq5o5h3" path="res://objects/characters/character.tscn" id="4_duxno"]
+[ext_resource type="PackedScene" uid="uid://m5mmuk1bilqo" path="res://objects/ui/dialog_ui.tscn" id="5_hvc4j"]
+
+[node name="SceneFive" type="Node2D"]
+script = ExtResource("1_nanc0")
+
+[node name="NextSentenceSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_enha6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_ohmtp")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CharacterSprite" parent="CanvasLayer2/Control" instance=ExtResource("4_duxno")]
+unique_name_in_owner = true
+position = Vector2(1261, 707)
+
+[node name="DialogUI" parent="CanvasLayer2" instance=ExtResource("5_hvc4j")]
+unique_name_in_owner = true

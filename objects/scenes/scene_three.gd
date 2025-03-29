@@ -1,4 +1,4 @@
-#SceneTwo.gd
+#SceneThree.gd
 extends Node2D
 
 @onready var character_sprite : Node2D = %CharacterSprite
@@ -8,10 +8,9 @@ extends Node2D
 var dialog_index : int = 0
 
 const dialog_lines : Array[String] = [
-	"Storyteller:800 years ago, the Archfiend Zarvok sought to become the first to rule all of Avernus.",
-	"Storyteller:His conquest was swift - one by one, the Nine Layers fell before him.",
-	"Storyteller:None could challenge him.",
-	"Storyteller:His name was feared, and soon, he was known as ‘The King of Ash’."
+	"Storyteller:With Avernus at his feet, he turned his gaze to the mortal realm.",
+	"Storyteller:He would conquer this world just as he did the last and the legendary city of Myth Drannor would be his first prize.",
+	"Storyteller:The people of Faerûn could only watch in horror as their nightmare began."
 	]
 
 
@@ -56,8 +55,9 @@ func process_current_line():
 func _on_text_animation_done():
 	character_sprite.play_idle_animation()
 
+
 func transition_to_next_scene():
-		var scene_two = load("res://objects/scenes/scene_three.tscn")
+		var scene_two = load("res://objects/scenes/scene_four.tscn")
 		if scene_two:
 			get_tree().change_scene_to_packed(scene_two)
 		else:

@@ -1,4 +1,4 @@
-#SceneTwo.gd
+#SceneFive.gd
 extends Node2D
 
 @onready var character_sprite : Node2D = %CharacterSprite
@@ -8,10 +8,9 @@ extends Node2D
 var dialog_index : int = 0
 
 const dialog_lines : Array[String] = [
-	"Storyteller:800 years ago, the Archfiend Zarvok sought to become the first to rule all of Avernus.",
-	"Storyteller:His conquest was swift - one by one, the Nine Layers fell before him.",
-	"Storyteller:None could challenge him.",
-	"Storyteller:His name was feared, and soon, he was known as ‘The King of Ash’."
+	"Storyteller:In the wake of the destruction, Lucian swore that Faerûn would never be unprepared again.",
+	"Storyteller:He found The Sentries, a guild of heroes who, to this day, guard the world against the darkness.",
+	"Storyteller:So tell me, young ones… do you believe the demons will stay gone forever?"
 	]
 
 
@@ -57,7 +56,7 @@ func _on_text_animation_done():
 	character_sprite.play_idle_animation()
 
 func transition_to_next_scene():
-		var scene_two = load("res://objects/scenes/scene_three.tscn")
+		var scene_two = load("res://objects/scenes/main_menu.tscn")
 		if scene_two:
 			get_tree().change_scene_to_packed(scene_two)
 		else:
