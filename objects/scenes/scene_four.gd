@@ -30,12 +30,12 @@ func _input(event):
 			dialog_ui.skip_text_animation()
 		else:
 			if dialog_index < len(dialog_lines) - 1:
-				if dialog_index = 1:
-					MusicStream.scene = 4
-				elif dialog_index = 2:
+				if dialog_index == 0:
 					MusicStream.scene = 5
-				elif dialog_index = 3
+				elif dialog_index == 1:
 					MusicStream.scene = 6
+				elif dialog_index == 2:
+					MusicStream.scene = 7
 
 				dialog_index += 1
 				next_sentence_sound.play()

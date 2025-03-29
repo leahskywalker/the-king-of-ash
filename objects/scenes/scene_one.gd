@@ -14,6 +14,7 @@ const dialog_lines : Array[String] = [
 
 
 func _ready():
+	MusicStream.scene = 0
 	# Connect Signals
 	dialog_ui.text_animation_done.connect(_on_text_animation_done)
 	# Process First Line of Dialog

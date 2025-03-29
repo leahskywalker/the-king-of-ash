@@ -4,10 +4,10 @@ extends Node
 @export var interactive_music: AudioStreamPlayer
 @export var music_stream: AudioStreamInteractive
 
-var clip_index: int = 0
+var clip_index: int = 9
 var last_index: int = 1
 
-@export var scene: int = 0
+@export var scene: int = 9
 
 func _ready():
 	
@@ -46,7 +46,7 @@ func choose_music_clip():
 		7:#scene6
 			clip_index = 7
 		_:
-			clip_index = 0
+			clip_index = 9
 		
 	print("clip index : "+str(clip_index))
 
@@ -55,8 +55,15 @@ func choose_music_clip():
 
 
 func _process(_delta):
+	print("scene : "+str(scene))
+	print("clip index : "+str(clip_index))
 	if interactive_music and music_stream:
 		choose_music_clip()
+	
+	else:
+		#interactive_music must already be instantiated and is referred here
+		interactive_music = $music
+		music_stream = interactive_music.stream
 		
 
 func switch_clip(index):
