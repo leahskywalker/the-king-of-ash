@@ -1,0 +1,70 @@
+[gd_scene load_steps=14 format=3 uid="uid://b8ms0b6cm6wpu"]
+
+[ext_resource type="AudioStream" uid="uid://cl1fu1cj3a22c" path="res://assets/music/intro.mp3" id="1_ljiia"]
+[ext_resource type="AudioStream" uid="uid://dkmy0yostundh" path="res://assets/music/intro_loop.mp3" id="2_ihfsf"]
+[ext_resource type="AudioStream" uid="uid://bhw0brej087wv" path="res://assets/music/scene2.mp3" id="3_lqq2j"]
+[ext_resource type="AudioStream" uid="uid://d31qc4w1xr2ak" path="res://assets/music/scene3.mp3" id="4_cg0f8"]
+[ext_resource type="AudioStream" uid="uid://dveb6ae7pwcuc" path="res://assets/music/scene4-1.mp3" id="5_h3mte"]
+[ext_resource type="AudioStream" uid="uid://chdckrokctcjx" path="res://assets/music/scene4-2.mp3" id="6_o4g48"]
+[ext_resource type="AudioStream" uid="uid://c5c4vktcjjl48" path="res://assets/music/scene4-3_loop.mp3" id="7_fe1s8"]
+[ext_resource type="AudioStream" uid="uid://b2b61qerh3ehw" path="res://assets/music/scene4-3_end.mp3" id="8_ihfsf"]
+[ext_resource type="AudioStream" uid="uid://bxvkorpvju7dn" path="res://assets/music/scene5_6.mp3" id="8_u4gfi"]
+[ext_resource type="AudioStream" uid="uid://bjgxre1871b6u" path="res://assets/music/scene5_6_perc.mp3" id="9_stcpt"]
+[ext_resource type="Script" uid="uid://b1ig4x3mwcav0" path="res://autoloads/music_stream/music_manager.gd" id="11_lqq2j"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_vqnw5"]
+clip_count = 2
+clip_0/name = &"Intro"
+clip_0/stream = ExtResource("1_ljiia")
+clip_0/auto_advance = 1
+clip_0/next_clip = 0
+clip_1/name = &"Intro Loop"
+clip_1/stream = ExtResource("2_ihfsf")
+clip_1/auto_advance = 0
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_kukh6"]
+clip_count = 9
+clip_0/name = &"Intro"
+clip_0/stream = SubResource("AudioStreamInteractive_vqnw5")
+clip_0/auto_advance = 0
+clip_1/name = &"scene2"
+clip_1/stream = ExtResource("3_lqq2j")
+clip_1/auto_advance = 0
+clip_2/name = &"scene3"
+clip_2/stream = ExtResource("4_cg0f8")
+clip_2/auto_advance = 0
+clip_3/name = &"scene4-1"
+clip_3/stream = ExtResource("5_h3mte")
+clip_3/auto_advance = 1
+clip_3/next_clip = 4
+clip_4/name = &"scene4-2"
+clip_4/stream = ExtResource("6_o4g48")
+clip_4/auto_advance = 0
+clip_5/name = &"scene4-3"
+clip_5/stream = ExtResource("7_fe1s8")
+clip_5/auto_advance = 0
+clip_6/name = &"scene4-3_end"
+clip_6/stream = ExtResource("8_ihfsf")
+clip_6/auto_advance = 0
+clip_7/name = &"scene5"
+clip_7/stream = ExtResource("8_u4gfi")
+clip_7/auto_advance = 1
+clip_7/next_clip = 8
+clip_8/name = &"scene5_perc"
+clip_8/stream = ExtResource("9_stcpt")
+clip_8/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 1.0,
+"fade_mode": 0,
+"from_time": 1,
+"to_time": 1
+}
+}
+
+[node name="MusicStream" type="Node"]
+script = ExtResource("11_lqq2j")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamInteractive_kukh6")
+bus = &"Music"
